@@ -3,39 +3,51 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Preço</th>
-                <th scope="col">Fechamento em</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Closes in</th>
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="listaFatura in listaFaturas" :key="listaFatura.id">
                 <th scope="row">{{ listaFatura.id }}</th>
                 <td>{{ listaFatura.nome_fatura }}</td>
-                <td>{{ listaFatura.preco }}</td>
+                <td>${{ listaFatura.preco }}</td>
                 <td>{{ listaFatura.fechamento }}</td>
-                <td></td>
+                <td>{{ listaFatura.status }}</td>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data(){
         return{
             listaFaturas: []
         };
     },
-    mounted() {},
+
+    mounted(){
+        this.getListaFaturas();
+    },
+
     methods: {
         getListaFaturas() {
-            // axios
-            // .get()
+            axios
+                .get('http://localhost:8000/api/faturas')
+                .then( response => {
+                    this.listaFaturas = response.data
+                })
+                .catch( error => {
+                    console.log(error);
+                })
         }
-    },
-}
+    }
+};
 </script>
 
 <style scoped>

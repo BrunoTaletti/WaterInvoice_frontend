@@ -5,13 +5,13 @@
                 <img src="../assets/logo_colorido_stroke.svg" />
             </div>
             <div class="row">
-                <p>Water Invoice</p>
+                <p>{{ title }}</p>
             </div>
         </div>
         <div class="box">
             <div class="row">
                 <div class="col-6">
-                    <h2>Faturas</h2>
+                    <h2>{{ tableName }}</h2>
                 </div>
                 <div class="col-6">
                     <BotoesExportacao />
@@ -30,6 +30,12 @@ import TabelaFaturas from '../components/TabelaFaturas.vue'
 import Footer from '../components/Footer.vue'
 
 export default {
+    data() {
+        return {
+            title: 'Water Invoices',
+            tableName: 'Invoices'
+        }
+    },
     components: {
         BotoesExportacao,
         TabelaFaturas,

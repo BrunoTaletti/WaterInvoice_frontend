@@ -4,11 +4,10 @@
 
 <script>
 import Faturas from './components/Faturas.vue'
-
 export default {
   name: 'App',
   components: {
-    Faturas,
+    Faturas
   }
 }
 </script>
