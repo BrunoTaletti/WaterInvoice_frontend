@@ -5,7 +5,7 @@
                 <img src="../assets/logo_colorido_stroke.svg" />
             </div>
             <div class="row">
-                <p>Water Reminder</p>
+                <p>Water Invoice</p>
             </div>
         </div>
         <div class="box">
