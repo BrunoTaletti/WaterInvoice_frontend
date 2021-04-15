@@ -33,7 +33,7 @@ export default {
     data() {
         return {
             title: 'Water Invoices',
-            tableName: 'Invoices'
+            tableName: 'My Invoices'
         }
     },
     components: {
